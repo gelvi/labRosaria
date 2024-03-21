@@ -1,30 +1,41 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <router-link to="/login" class="nav-item" >Login</router-link>
+      <router-link to="/" class="nav-item">Home</router-link>
+      <router-link to="/productList" class="nav-item">Product</router-link>
+      <router-link to="/cartList" class="nav-item" >Cart</router-link>
+    </div>
   </nav>
   <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.navbar {
+  background-color: #64A749; /* Garnier green color */
+  padding: 10px 0;
 }
 
-nav {
-  padding: 30px;
+.navbar-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-nav a {
+.nav-item {
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.nav-item:hover {
+  background-color: #4c8738; /* Darker shade of Garnier green */
+}
+
+.router-link-exact-active {
+  background-color: #4c8738; /* Darker shade of Garnier green for active link */
 }
 </style>
